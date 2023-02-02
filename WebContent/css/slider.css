@@ -1,0 +1,74 @@
+#slider {
+    /* 종횡비=4:3 */
+    width: 400px;
+    height: 300px;
+    /* .pic에게 absoulte를 주기위해 relative를줌 */
+    position: absolute;
+    left: 75%;
+    top: 68%;
+    transform: translate(-50%, -50%);
+}
+
+.pic {
+    position: absolute;
+    /* 처음 사이즈를 줄때부터 종횡비를 맞춰서 줬기때문에 가로100%만 준다 */
+    width: 100%;
+    border-radius: 10px;
+    /* 처음 셋팅을 모든 그림이 안보이게! */
+    /* 왜냐, 1번 보이게 하고, 2,3,4,5번 안보이게 하는것보다, 모두 안보이게 한다음에 1번만 보여라가 더 간단 */
+    display: none;
+}
+/* 이전,이후버튼 */
+.pic:first-of-type {
+    /* 첫번째 그림이 보여지는채로 시작 */
+    display: block;
+}
+#prev,
+#next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1em 1.8em;
+    /* 버튼 외각선 안보이게 */
+    border: none;
+    /* 버튼위 마우스 올렸을때, 손모양 나오게 */
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+/* 마우스를 올렸을때 반투명하게 보이도록 해라 */
+#prev:hover,
+#next:hover {
+    background-color: rgba(255, 255, 255, 1);
+    
+}
+
+#next {
+    right: 0;
+}
+
+#page {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: white;
+    font-weight: bold;
+}
+#dots {
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    bottom: 30px;
+}
+#dots button {
+    width: 14px;
+    height: 14px;
+    /* 사각형에서 끝부분만 알약모양으로 하기위해서 */
+    border-radius: 7px;
+    transition: all 0.4s;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.active {
+    width: 40px !important;
+}
